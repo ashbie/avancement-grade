@@ -59,10 +59,20 @@ elseif (isset($_POST['code']) and ($_POST['code']=='A111' or $_POST['code']=='A1
 		 	echo '<table border="1"><tr><td>'.$row['code'].'</td><td>'.$row['point'].'</td><td>'.$row['plafond'].'</td></tr></table>';
 		 
 		 }
-		    echo '</br><table border="1"><tr><th>TITRE</th><th>EDITEUR</th><th>ANNEE DE PRODUCTION</th><th>INTITULE</th><th>NIVEAU</th>
-		                                     <th>DEPARTEMENT</th><th>ANNEE</th><th>code</th></tr>
-		                                 <tr><td><input type="text"/></td><td><input type="text"/></td><td><input type="text"/></td><td><input type="text"/></td><td><input type="text"/></td><td><input type="text"/></td><td><input type="text"/></td><td><input type="text"/></td></tr>
-		          </table>';
+		    echo '</br>
+		 			<div class="container">
+					 <div class="row"> <div class="col-6">TITRE</div><div class="col-6"><input type="text" name="titre" required="required" /></div>   </div>
+					 <div class="row"><div class="col-6">EDITEUR</div><div class="col-6"><input type="text" name="editeur" required="required" /></div>   </div>
+					 <div class="row"><div class="col-6">ANNEE DE PRODUCTION</div><div class="col-6"><input type="text" name="annee_de_production" required="required" /></div>   </div>
+					 <div class="row"><div class="col-6">INTITULE</div><div class="col-6"><input type="text" name="intitule" required="required" /></div>   </div>
+					 <div class="row"><div class="col-6">NIVEAU</div><div class="col-6"><input type="text" name="niveau" required="required" /></div>   </div>
+					 <div class="row"><div class="col-6">DEPARTEMENT</div><div class="col-6"><input type="text" name="departement" required="required" /></div>   </div>
+					 <div class="row"><div class="col-6">ANNEE</div><div class="col-6"><input type="text" name="annee" required="required" /></div>   </div>
+					 <div class="row"><div class="col-6">code</div><div class="col-6"><input type="text" name="code"/></div>        </div>
+					 </div>
+				
+					 </br>
+			 <input type="submit" value="Envoyez les informations" name="submit_a11">';
 	}else{
       echo "Error in ".$query."<br>".$db->error;
     }
@@ -81,9 +91,16 @@ elseif (isset($_POST['code']) and ($_POST['code']=='A121' or $_POST['code']=='A1
 		 	echo '<table border="1"><tr><td>'.$row['code'].'</td><td>'.$row['point'].'</td><td>'.$row['plafond'].'</td></tr></table>';
 		 
 		 }
-		    echo '</br><table border="1"><tr><th>INTITULE</th><th>NIVEAU</th><th>DEPARTEMENT</th><th>NIVEAU</th><th>code</th></tr>
-		                                 <tr><td><input type="text"/></td><td><input type="text"/></td><td><input type="text"/></td><td><input type="text"/></td><td><input type="text"/></td></tr>
-		          </table>';
+		    echo '</br>
+				  <div class="container">
+					 <div class="row"><div class="col-6">INTITULE</div><div class="col-6"><input type="text" name="intitule" required="required" /></div>   </div>
+					 <div class="row"><div class="col-6">NIVEAU</div><div class="col-6"><input type="text" name="niveau" required="required" /></div>   </div>
+					 <div class="row"><div class="col-6">DEPARTEMENT</div><div class="col-6"><input type="text" name="departement" required="required" /></div>   </div>
+					 <div class="row"><div class="col-6">code</div><div class="col-6"><input type="text" name="code"  /></div>        </div>
+					 </div>
+				
+					 </br>
+			 <input type="submit" value="Envoyez les informations" name="submit_a12">';
 	}else{
       echo "Error in ".$query."<br>".$db->error;
     }
@@ -102,9 +119,22 @@ elseif (isset($_POST['code']) and ($_POST['code']=='A211'  )) {
 		 	echo '<table border="1"><tr><td>'.$row['code'].'</td><td>'.$row['point'].'</td><td>'.$row['plafond'].'</td></tr></table>';
 		 
 		 }
-		    echo '</br><table border="1"><tr><th>ANNEE</th><th>DEPARTEMENT</th><th>NIVEAU 1 ou 2 </th><th>matière </th><th>Volume annuel équivalent TP</th><th>cour</th><th>TD</th><th>TP</th><th>Total équivalent TP </th><th>code </th></tr>
-		                                 <tr><td><input type="text"/></td><td><input type="text"/></td><td><input type="text"/></td><td><input type="text"/></td><td><input type="text"/></td><td><input type="text"/></td><td><input type="text"/></td><td><input type="text"/></td><td><input type="text"/></td><td><input type="text"/></td></tr>
-		          </table>';
+		    echo '</br>
+				  <div class="container">
+					 <div class="row"> <div class="col-6">ANNEE</div><div class="col-6"><input type="text" name="annee" required="required" /></div>   </div>
+					 <div class="row"><div class="col-6">DEPARTEMENT</div><div class="col-6"><input type="text" name="departement" required="required" /></div>   </div>
+					 <div class="row"><div class="col-6">NIVEAU 1 ou 2 </div><div class="col-6"><input type="text" name="niveau_1_ou_2" required="required" /></div>   </div>
+					 <div class="row"><div class="col-6">matière</div><div class="col-6"><input type="text" name="matiere" required="required" /></div>   </div>
+					 <div class="row"><div class="col-6">Volume annuel équivalent TP</div><div class="col-6"><input type="text" name="Volume_annuel_equivalent_TP" required="required" /></div>   </div>
+					 <div class="row"><div class="col-6">cour</div><div class="col-6"><input type="text" name="cour" required="required" /></div>   </div>
+					 <div class="row"><div class="col-6">TD</div><div class="col-6"><input type="text" name="TD" required="required" /></div>   </div>
+					 <div class="row"><div class="col-6">TP</div><div class="col-6"><input type="text" name="TP" required="required" /></div>        </div>
+					 <div class="row"><div class="col-6">Total équivalent TP</div><div class="col-6"><input type="text" name="Total_equivalent_TP" required="required" /></div>   </div>
+					 <div class="row"><div class="col-6">code</div><div class="col-6"><input type="text" name="code"  /></div>   </div>
+					 </div>
+				
+					 </br>
+			 <input type="submit" value="Envoyez les informations" name="submit_a21">';
 	}else{
       echo "Error in ".$query."<br>".$db->error;
     }
@@ -123,9 +153,16 @@ elseif (isset($_POST['code']) and ($_POST['code']=='A221' or $_POST['code']=='A2
 		 	echo '<table border="1"><tr><td>'.$row['code'].'</td><td>'.$row['point'].'</td><td>'.$row['plafond'].'</td></tr></table>';
 		 
 		 }
-		    echo '</br><table border="1"><tr><th>INTITULE</th><th>NIVEAU</th><th>DEPARTEMENT</th><th>ANNEE</th></tr>
-		                                 <tr><td><input type="text"/></td><td><input type="text"/></td><td><input type="text"/></td><td><input type="text"/></tr>
-		          </table>';
+		    echo '</br>
+				  <div class="container">
+				  <div class="row"><div class="col-6">INTITULE</div><div class="col-6"><input type="text" name="intitule" required="required" /></div>   </div>
+				  <div class="row"><div class="col-6">NIVEAU</div><div class="col-6"><input type="text" name="niveau" required="required" /></div>   </div>
+				  <div class="row"><div class="col-6">DEPARTEMENT</div><div class="col-6"><input type="text" name="departement" required="required" /></div>   </div>
+				  <div class="row"><div class="col-6">ANNEE</div><div class="col-6"><input type="text" name="annee" required="required" /></div>        </div>
+				  </div>
+				
+				  </br>
+		  <input type="submit" value="Envoyez les informations" name="submit_a22"> ';
 	}else{
       echo "Error in ".$query."<br>".$db->error;
     }
@@ -144,10 +181,17 @@ elseif (isset($_POST['code']) and ($_POST['code']=='A231' or $_POST['code']=='A2
 		 	echo '<table border="1"><tr><td>'.$row['code'].'</td><td>'.$row['point'].'</td><td>'.$row['plafond'].'</td></tr></table>';
 		 
 		 }
-		    echo '</br><table border="1"><tr><th>INTITULE</th><th>Type de la formation</th><th>Bénéficiaires de la
-                  formation</th><th>ANNEE</th><th>Code</th></tr>
-		                                 <tr><td><input type="text"/></td><td><input type="text"/></td><td><input type="text"/></td><td><input type="text"/></td><td><input type="text"/></td></tr>
-		          </table>';
+		    echo '</br>
+				  <div class="container">
+				  <div class="row"><div class="col-6">INTITULE</div><div class="col-6"><input type="text" name="intitule" required="required" /></div>   </div>
+				  <div class="row"><div class="col-6">Type de la formation</div><div class="col-6"><input type="text" name="Type_de_la_formation" required="required" /></div>   </div>
+				  <div class="row"><div class="col-6">Bénéficiaires de la formation</div><div class="col-6"><input type="text" name="Beneficiaires_de_la_formation" required="required" /></div>   </div>
+				  <div class="row"><div class="col-6">ANNEE</div><div class="col-6"><input type="text" name="annee" required="required" /></div>        </div>
+				  <div class="row"><div class="col-6">Code</div><div class="col-6"><input type="text" name="code"  /></div>        </div>
+				  </div>
+				
+				  </br>
+		  <input type="submit" value="Envoyez les informations" name="submit_a23">';
 	}else{
       echo "Error in ".$query."<br>".$db->error;
     }
@@ -166,9 +210,18 @@ elseif (isset($_POST['code']) and ($_POST['code']=='A241'  )) {
 		 	echo '<table border="1"><tr><td>'.$row['code'].'</td><td>'.$row['point'].'</td><td>'.$row['plafond'].'</td></tr></table>';
 		 
 		 }
-		    echo '</br><table border="1"><tr><th>FORMATION</th><th>Etablissement</th><th>Matière/Module</th><th>ANNEE</th><th>Volume horaire</th><th>Code</th></tr>
-		                                 <tr><td><input type="text"/></td><td><input type="text"/></td><td><input type="text"/></td><td><input type="text"/></td><td><input type="text"/></td><td><input type="text"/></td></tr>
-		          </table>';
+		    echo '</br>
+				  <div class="container">
+				  <div class="row"><div class="col-6">FORMATION</div><div class="col-6"><input type="text" name="FORMATION" required="required" /></div>   </div>
+				  <div class="row"><div class="col-6">Etablissement</div><div class="col-6"><input type="text" name="Etablissement" required="required" /></div>   </div>
+				  <div class="row"><div class="col-6">Matière/Module</div><div class="col-6"><input type="text" name="matiere" required="required" /></div>   </div>
+				  <div class="row"><div class="col-6">ANNEE</div><div class="col-6"><input type="text" name="annee" required="required" /></div>        </div>
+				  <div class="row"><div class="col-6">Volume horaire</div><div class="col-6"><input type="text" name="Volume_horaire" required="required" /></div>        </div>
+				  <div class="row"><div class="col-6">Code</div><div class="col-6"><input type="text" name="code" /></div>        </div>
+				  </div>
+				
+				  </br>
+		  <input type="submit" value="Envoyez les informations" name="submit_a24">';
 	}else{
       echo "Error in ".$query."<br>".$db->error;
     }
@@ -187,9 +240,16 @@ elseif (isset($_POST['code']) and ($_POST['code']=='A251' or $_POST['code']=='A2
 		 	echo '<table border="1"><tr><td>'.$row['code'].'</td><td>'.$row['point'].'</td><td>'.$row['plafond'].'</td></tr></table>';
 		 
 		 }
-		    echo '</br><table border="1"><tr><th>Nature</th><th>Période</th><th>Lieu</th><th>Code</th>
-		                                 <tr><td><input type="text"/></td><td><input type="text"/></td><td><input type="text"/></td><td><input type="text"/></td></tr>
-		          </table>';
+		    echo '</br>
+				  <div class="container">
+				  <div class="row"><div class="col-6">Nature</div><div class="col-6"><input type="text" name="Nature" required="required" /></div>   </div>
+				  <div class="row"><div class="col-6">Période</div><div class="col-6"><input type="text" name="Periode" required="required" /></div>   </div>
+				  <div class="row"><div class="col-6">Lieu</div><div class="col-6"><input type="text" name="Lieu" required="required" /></div>   </div>
+				  <div class="row"><div class="col-6">Code</div><div class="col-6"><input type="text" name="code" /></div>        </div>
+				  </div>
+				
+				  </br>
+		  <input type="submit" value="Envoyez les informations" name="submit_a25">';
 	}else{
       echo "Error in ".$query."<br>".$db->error;
     }
@@ -217,9 +277,16 @@ elseif (isset($_POST['code']) and ($_POST['code']=='A311' or $_POST['code']=='A3
 		 	echo '<table border="1"><tr><td>'.$row['code'].'</td><td>'.$row['point'].'</td><td>'.$row['plafond'].'</td></tr></table>';
 		 
 		 }
-		    echo '</br><table border="1"><tr><th>Nature</th><th>Période</th><th>Etablissement</th><th>Code</th>
-		                                 <tr><td><input type="text"/></td><td><input type="text"/></td><td><input type="text"/></td><td><input type="text"/></td></tr>
-		          </table>';
+		    echo '</br>
+				  <div class="container">
+				  <div class="row"><div class="col-6">Nature</div><div class="col-6"><input type="text" name="Nature" required="required" /></div>   </div>
+				  <div class="row"><div class="col-6">Période</div><div class="col-6"><input type="text" name="Periode" required="required" /></div>   </div>
+				  <div class="row"><div class="col-6">Etablissement</div><div class="col-6"><input type="text" name="Etablissement" required="required" /></div>   </div>
+				  <div class="row"><div class="col-6">Code</div><div class="col-6"><input type="text" name="code" /></div>        </div>
+				  </div>
+				
+				  </br>
+		  <input type="submit" value="Envoyez les informations" name="submit_a31_a32_a33_a34">';
 	}else{
       echo "Error in ".$query."<br>".$db->error;
     }
@@ -238,10 +305,17 @@ elseif (isset($_POST['code']) and ($_POST['code']=='A351')) {
 		 	echo '<table border="1"><tr><td>'.$row['code'].'</td><td>'.$row['point'].'</td><td>'.$row['plafond'].'</td></tr></table>';
 		 
 		 }
-		    echo '</br><table border="1"><tr><th>INTITULE</th><th>NIVEAU</th><th>Département et
-établissement</th><th>Année</th><th>Code</th></tr>
-		                                 <tr><td><input type="text"/></td><td><input type="text"/></td><td><input type="text"/></td><td><input type="text"/></td><td><input type="text"/></td></tr>
-		          </table>';
+		    echo '</br>
+				  <div class="container">
+				  <div class="row"><div class="col-6">INTITULE</div><div class="col-6"><input type="text" name="intitule" required="required" /></div>   </div>
+				  <div class="row"><div class="col-6">NIVEAU</div><div class="col-6"><input type="text" name="niveau" required="required" /></div>   </div>
+				  <div class="row"><div class="col-6">Département et établissement</div><div class="col-6"><input type="text" name="Departement_et_etablissement" required="required" /></div>   </div>
+				  <div class="row"><div class="col-6">Année</div><div class="col-6"><input type="text" name="annee" required="required" /></div>        </div>
+				  <div class="row"><div class="col-6">Code</div><div class="col-6"><input type="text" name="code" /></div>        </div>
+				  </div>
+				
+				  </br>
+		  <input type="submit" value="Envoyez les informations" name="submit_a35">';
 	}else{
       echo "Error in ".$query."<br>".$db->error;
     }
@@ -260,9 +334,16 @@ elseif (isset($_POST['code']) and ($_POST['code']=='A361' or $_POST['code']=='A3
 		 	echo '<table border="1"><tr><td>'.$row['code'].'</td><td>'.$row['point'].'</td><td>'.$row['plafond'].'</td></tr></table>';
 		 
 		 }
-		    echo '</br><table border="1"><tr><th>Nature</th><th>Période</th><th>Structure universitaire</th><th>Code</th></tr>
-		                                 <tr><td><input type="text"/></td><td><input type="text"/></td><td><input type="text"/></td><td><input type="text"/></td></tr>
-		          </table>';
+		    echo '</br>
+				  <div class="container">
+				  <div class="row"><div class="col-6">Nature</div><div class="col-6"><input type="text" name="Nature" required="required" /></div>   </div>
+				  <div class="row"><div class="col-6">Période</div><div class="col-6"><input type="text" name="Periode" required="required" /></div>   </div>
+				  <div class="row"><div class="col-6">Structure universitaire</div><div class="col-6"><input type="text" name="Structure_universitaire" required="required" /></div>   </div>
+				  <div class="row"><div class="col-6">Code</div><div class="col-6"><input type="text" name="code" /></div>        </div>
+				  </div>
+				
+				  </br>
+		  <input type="submit" value="Envoyez les informations" name="submit_a36">';
 	}else{
       echo "Error in ".$query."<br>".$db->error;
     }
@@ -287,9 +368,16 @@ elseif (isset($_POST['code']) and ($_POST['code']=='B111' or $_POST['code']=='B1
 		 	echo '<table border="1"><tr><td>'.$row['code'].'</td><td>'.$row['point'].'</td><td>'.$row['plafond'].'</td></tr></table>';
 		 
 		 }
-		    echo '</br><table border="1"><tr><th>Titre</th><th>Année</th><th>Référence</th><th>Code</th></tr>
-		                                 <tr><td><input type="text"/></td><td><input type="text"/></td><td><input type="text"/></td><td><input type="text"/></td></tr>
-		          </table>';
+		    echo '</br>
+				  <div class="container">
+				  <div class="row"><div class="col-6">Titre</div><div class="col-6"><input type="text" name="titre" required="required" /></div>   </div>
+				  <div class="row"><div class="col-6">Année</div><div class="col-6"><input type="text" name="annee" required="required" /></div>   </div>
+				  <div class="row"><div class="col-6">Référence</div><div class="col-6"><input type="text" name="Reference" required="required" /></div>   </div>
+				  <div class="row"><div class="col-6">Code</div><div class="col-6"><input type="text" name="code" /></div>        </div>
+				  </div>
+				
+				  </br>
+		  <input type="submit" value="Envoyez les informations" name="submit_b11_b12_b13">';
 	}else{
       echo "Error in ".$query."<br>".$db->error;
     }
@@ -311,10 +399,17 @@ elseif (isset($_POST['code']) and ($_POST['code']=='B141' or $_POST['code']=='B1
 		 	echo '<table border="1"><tr><td>'.$row['code'].'</td><td>'.$row['point'].'</td><td>'.$row['plafond'].'</td></tr></table>';
 		 
 		 }
-		    echo '</br><table border="1"><tr><th>Titre</th><th>Intitulé de la manifestation</th><th>Lieu de la
-manifestation</th><th>Année</th><th>Code</th></tr>
-		                                 <tr><td><input type="text"/></td><td><input type="text"/></td><td><input type="text"/></td><td><input type="text"/></td><td><input type="text"/></td></tr>
-		          </table>';
+		    echo '</br>
+				  <div class="container">
+				  <div class="row"><div class="col-6">Titre</div><div class="col-6"><input type="text" name="titre" required="required" /></div>   </div>
+				  <div class="row"><div class="col-6">Intitulé de la manifestation</div><div class="col-6"><input type="text" name="Intitule_de_la_manifestation" required="required" /></div>   </div>
+				  <div class="row"><div class="col-6">Lieu de la manifestation</div><div class="col-6"><input type="text" name="Lieu_de_la_manifestation" required="required" /></div>   </div>
+				  <div class="row"><div class="col-6">Année</div><div class="col-6"><input type="text" name="annee" required="required" /></div>        </div>
+				  <div class="row"><div class="col-6">Code</div><div class="col-6"><input type="text" name="code" /></div>        </div>
+				  </div>
+				
+				  </br>
+		  <input type="submit" value="Envoyez les informations" name="submit_b14_b15">';
 	}else{
       echo "Error in ".$query."<br>".$db->error;
     }
@@ -336,9 +431,17 @@ elseif (isset($_POST['code']) and ($_POST['code']=='B211' or $_POST['code']=='B2
 		 	echo '<table border="1"><tr><td>'.$row['code'].'</td><td>'.$row['point'].'</td><td>'.$row['plafond'].'</td></tr></table>';
 		 
 		 }
-		    echo '</br><table border="1"><tr><th>Nature de l’encadrement</th><th>Nom du candidat</th><th>Thème</th><th>Année et lieu de soutenance</th><th>Code</th></tr>
-		                                 <tr><td><input type="text"/></td><td><input type="text"/></td><td><input type="text"/></td><td><input type="text"/></td><td><input type="text"/></td></tr>
-		          </table>';
+		    echo '</br>
+				  <div class="container">
+				  <div class="row"><div class="col-6">Nature de l’encadrement</div><div class="col-6"><input type="text" name="Nature_de_encadrement" required="required" /></div>   </div>
+				  <div class="row"><div class="col-6">Nom du candidat</div><div class="col-6"><input type="text" name="Nom_du_candidat" required="required" /></div>   </div>
+				  <div class="row"><div class="col-6">Thème</div><div class="col-6"><input type="text" name="Theme" required="required" /></div>   </div>
+				  <div class="row"><div class="col-6">Année et lieu de soutenance</div><div class="col-6"><input type="text" name="Annee_et_lieu_de_soutenance" required="required" /></div>        </div>
+				  <div class="row"><div class="col-6">Code</div><div class="col-6"><input type="text" name="code" /></div>        </div>
+				  </div>
+				
+				  </br>
+		  <input type="submit" value="Envoyez les informations" name="submit_b21_b22">';
 	}else{
       echo "Error in ".$query."<br>".$db->error;
     }
@@ -357,9 +460,18 @@ elseif (isset($_POST['code']) and ($_POST['code']=='B231' or $_POST['code']=='B2
 		 	echo '<table border="1"><tr><td>'.$row['code'].'</td><td>'.$row['point'].'</td><td>'.$row['plafond'].'</td></tr></table>';
 		 
 		 }
-		    echo '</br><table border="1"><tr><th>Nom du candidat</th><th>Diplôme</th><th>Thème</th><th> lieu de soutenance</th><th> Date de soutenance</th><th>Code</th></tr>
-		                                 <tr><td><input type="text"/></td><td><input type="text"/></td><td><input type="text"/></td><td><input type="text"/></td><td><input type="text"/></td><td><input type="text"/></td></tr>
-		          </table>';
+		    echo '</br>
+				  <div class="container">
+				  <div class="row"><div class="col-6">Nom du candidat</div><div class="col-6"><input type="text" name="Nom_du_candidat" required="required" /></div>   </div>
+				  <div class="row"><div class="col-6">Diplôme</div><div class="col-6"><input type="text" name="Diplome" required="required" /></div>   </div>
+				  <div class="row"><div class="col-6">Thème</div><div class="col-6"><input type="text" name="Theme" required="required" /></div>   </div>
+				  <div class="row"><div class="col-6">Lieu de soutenance</div><div class="col-6"><input type="text" name="lieu_de_soutenance" required="required" /></div>        </div>
+				  <div class="row"><div class="col-6">Date de soutenance</div><div class="col-6"><input type="text" name="Date_de_soutenance" required="required" /></div>        </div>
+				  <div class="row"><div class="col-6">Code</div><div class="col-6"><input type="text" name="code" /></div>        </div>
+				  </div>
+				
+				  </br>
+		  <input type="submit" value="Envoyez les informations" name="submit_b23">';
 	}else{
       echo "Error in ".$query."<br>".$db->error;
     }
@@ -378,16 +490,26 @@ elseif (isset($_POST['code']) and ($_POST['code']=='B241' )) {
 		 	echo '<table border="1"><tr><td>'.$row['code'].'</td><td>'.$row['point'].'</td><td>'.$row['plafond'].'</td></tr></table>';
 		 
 		 }
-		    echo '</br><table border="1"><tr><th>Département</th><th>Intitulé / précisions</th><th>lieu</th><th>date</th><th>Code</th></tr>
-		                                 <tr><td><input type="text"/></td><td><input type="text"/></td><td><input type="text"/></td><td><input type="text"/></td><td><input type="text"/></td></tr>
-		          </table>';
+		    echo '</br>
+				  <div class="container">
+				  <div class="row"><div class="col-6">Département</div><div class="col-6"><input type="text" name="departement" required="required" /></div>   </div>
+				  <div class="row"><div class="col-6">Intitulé/précisions</div><div class="col-6"><input type="text" name="Intitule_ou_precisions" required="required" /></div>   </div>
+				  <div class="row"><div class="col-6">Lieu</div><div class="col-6"><input type="text" name="Lieu" required="required" /></div>   </div>
+				  <div class="row"><div class="col-6">Date</div><div class="col-6"><input type="text" name="Date" required="required" /></div>        </div>
+				  <div class="row"><div class="col-6">Code</div><div class="col-6"><input type="text" name="code" /></div>        </div>
+				  </div>
+				
+				  </br>
+		  <input type="submit" value="Envoyez les informations" name="submit_b24">';
 	}else{
       echo "Error in ".$query."<br>".$db->error;
     }
 }
-//B31
- //B31
- //B31
+//B311
+ //B312
+ //B313
+ //B314
+ //B315
 elseif (isset($_POST['code']) and ($_POST['code']=='B311' or $_POST['code']=='B312' or $_POST['code']=='B313' or $_POST['code']=='B314' or $_POST['code']=='B315')) {
  
     $z = $_POST['code'];
@@ -402,19 +524,23 @@ elseif (isset($_POST['code']) and ($_POST['code']=='B311' or $_POST['code']=='B3
 		    echo '</br><table border="1">
 	<tr><th></th><th>Intitulé</th><th>Membre ou responsable</th><th>Etablissement</th><th>Période</th><th>Code</th></tr>
 	
-	<tr><td>Laboratoire/unité de recherche</td><td><input type="text"/></td><td><input type="text"/></td><td><input type="text"/></td><td><input type="text"/></td><td><input type="text"/></td></tr>
+	<tr><td>Laboratoire/unité de recherche</td><td><input type="text" name="intitule_Laboratoire_ou_unite_de_recherche" required="required" /></td><td><input type="text" name="Membre_ou_responsable_Laboratoire_ou_unite_de_recherche" required="required" /></td><td><input type="text" name="Etablissement_Laboratoire_ou_unite_de_recherche" required="required" /></td><td><input type="text" name="Periode_Laboratoire_ou_unite_de_recherche" required="required" /></td><td><input type="text" name="code_Laboratoire_ou_unite_de_recherche" /></td></tr>
 	
-	<tr><td>Réseau</td><td><input type="text"/></td><td><input type="text"/></td><td><input type="text"/></td><td><input type="text"/></td><td><input type="text"/></td></tr>
+	<tr><td>Réseau</td><td><input type="text" name="intitule_Reseau" required="required" /></td><td><input type="text" name="Membre_ou_responsable_Reseau" required="required" /></td><td><input type="text" name="Etablissement_Reseau" required="required" /></td><td><input type="text" name="Periode_Reseau" required="required" /></td><td><input type="text" name="code_Reseau" /></td></tr>
 	
-	<tr><td>pôle de compétences</td><td><input type="text"/></td><td><input type="text"/></td><td><input type="text"/></td><td><input type="text"/></td><td><input type="text"/></td></tr>
+	<tr><td>pôle de compétences</td><td><input type="text" name="intitule_pole_de_competences" required="required" /></td><td><input type="text" name="Membre_ou_responsable_pole_de_competences" required="required" /></td><td><input type="text" name="Etablissement_pole_de_competences" required="required" /></td><td><input type="text" name="Periode_pole_de_competences" required="required" /></td><td><input type="text" name="code_pole_de_competences" /></td></tr>
 	
-	<tr><td>UFR- Doctorat,DESA,DESS</td><td><input type="text"/></td><td><input type="text"/></td><td><input type="text"/></td><td><input type="text"/></td><td><input type="text"/></td></tr>
-</table>';
+	<tr><td>UFR- Doctorat,DESA,DESS</td><td><input type="text" name="intitule_UFR_Doctorat_DESA_DESS" required="required" /></td><td><input type="text" name="Membre_ou_responsable_UFR_Doctorat_DESA_DESS" required="required" /></td><td><input type="text" name="Etablissement_UFR_Doctorat_DESA_DESS" required="required" /></td><td><input type="text" name="Periode_UFR_Doctorat_DESA_DESS" required="required" /></td><td><input type="text" name="code_UFR_Doctorat_DESA_DESS" /></td></tr>
+</table>
+				
+				
+		</br>
+		<input type="submit" value="Envoyez les informations" name="submit_b31">';
 	}else{
       echo "Error in ".$query."<br>".$db->error;
     }
 }
-//B32
+
  //B32
  //B32
 elseif (isset($_POST['code']) and ($_POST['code']=='B321' or $_POST['code']=='B322' )) {
@@ -428,9 +554,19 @@ elseif (isset($_POST['code']) and ($_POST['code']=='B321' or $_POST['code']=='B3
 		 	echo '<table border="1"><tr><td>'.$row['code'].'</td><td>'.$row['point'].'</td><td>'.$row['plafond'].'</td></tr></table>';
 		 
 		 }
-		    echo '</br><table border="1"><tr><th>Intitulé et cadre</th><th>Responsable ou participant</th><th>Etablissement</th><th>Période</th><th>Partenaires</th><th>Type de financement</th><th>Code</th></tr>
-		                                 <tr><td><input type="text"/></td><td><input type="text"/></td><td><input type="text"/></td><td><input type="text"/></td><td><input type="text"/></td><td><input type="text"/></td><td><input type="text"/></td></tr>
-		          </table>';
+		    echo '</br>
+			    <div class="container">
+				<div class="row"><div class="col-6">Intitulé et cadre</div><div class="col-6"><input type="text" name="Intitule_et_cadre" required="required" /></div>   </div>
+				<div class="row"><div class="col-6">Responsable ou participant</div><div class="col-6"><input type="text" name="Responsable_ou_participant" required="required" /></div>   </div>
+				<div class="row"><div class="col-6">Etablissement</div><div class="col-6"><input type="text" name="Etablissement" required="required" /></div>   </div>
+				<div class="row"><div class="col-6">Période</div><div class="col-6"><input type="text" name="Periode" required="required" /></div>        </div>
+				<div class="row"><div class="col-6">Partenaires</div><div class="col-6"><input type="text" name="Partenaires" required="required" /></div>        </div>
+				<div class="row"><div class="col-6">Type de financement</div><div class="col-6"><input type="text" name="Type_de_financement" required="required" /></div>        </div>
+				<div class="row"><div class="col-6">Code</div><div class="col-6"><input type="text" name="code" /></div>        </div>
+				</div>
+				
+				</br>
+        <input type="submit" value="Envoyez les informations" name="submit_b32">';
 	}else{
       echo "Error in ".$query."<br>".$db->error;
     }
@@ -449,9 +585,18 @@ elseif (isset($_POST['code']) and ( $_POST['code']=='B331' )) {
 		 	echo '<table border="1"><tr><td>'.$row['code'].'</td><td>'.$row['point'].'</td><td>'.$row['plafond'].'</td></tr></table>';
 		 
 		 }
-		    echo '</br><table border="1"><tr><th>Intitulé</th><th>Nature</th><th>Etablissement/Organisme</th><th>Période</th><th>Partenaires</th><th>Code</th></tr>
-		                                 <tr><td><input type="text"/></td><td><input type="text"/></td><td><input type="text"/></td><td><input type="text"/></td><td><input type="text"/></td><td><input type="text"/></td></tr>
-		          </table>';
+		    echo '</br>
+				  <div class="container">
+				<div class="row"><div class="col-6">Intitulé</div><div class="col-6"><input type="text" name="intitule" required="required" /></div>   </div>
+				<div class="row"><div class="col-6">Nature</div><div class="col-6"><input type="text" name="Nature" required="required" /></div>   </div>
+				<div class="row"><div class="col-6">Etablissement/Organisme</div><div class="col-6"><input type="text" name="Etablissement_ou_Organisme" required="required" /></div>   </div>
+				<div class="row"><div class="col-6">Période</div><div class="col-6"><input type="text" name="Periode" required="required" /></div>        </div>
+				<div class="row"><div class="col-6">Partenaires</div><div class="col-6"><input type="text" name="Partenaires" required="required" /></div>        </div>
+				<div class="row"><div class="col-6">Code</div><div class="col-6"><input type="text" name="code"  /></div>        </div>
+				</div>
+				
+				</br>
+        <input type="submit" value="Envoyez les informations" name="submit_b33">';
 	}else{
       echo "Error in ".$query."<br>".$db->error;
     }
@@ -470,9 +615,18 @@ elseif (isset($_POST['code']) and ($_POST['code']=='B341')) {
 		 	echo '<table border="1"><tr><td>'.$row['code'].'</td><td>'.$row['point'].'</td><td>'.$row['plafond'].'</td></tr></table>';
 		 
 		 }
-		    echo '</br><table border="1"><tr><th>Intitulé de la manifestation</th><th>Les partenaires</th><th>Bénéficiaires</th><th>date</th><th>Lieu</th><th>Code</th></tr>
-		                                 <tr><td><input type="text"/></td><td><input type="text"/></td><td><input type="text"/></td><td><input type="text"/></td><td><input type="text"/></td><td><input type="text"/></td></tr>
-		          </table>';
+		    echo '</br>
+				  <div class="container">
+				<div class="row"><div class="col-6">Intitulé de la manifestation</div><div class="col-6"><input type="text" name="Intitule_de_la_manifestation" required="required" /></div>   </div>
+				<div class="row"><div class="col-6">Les partenaires</div><div class="col-6"><input type="text" name="Partenaires" required="required" /></div>   </div>
+				<div class="row"><div class="col-6">Bénéficiaires</div><div class="col-6"><input type="text" name="Beneficiaires" required="required" /></div>   </div>
+				<div class="row"><div class="col-6">Date</div><div class="col-6"><input type="text" name="Date" required="required" /></div>        </div>
+				<div class="row"><div class="col-6">Lieu</div><div class="col-6"><input type="text" name="Lieu" required="required" /></div>        </div>
+				<div class="row"><div class="col-6">Code</div><div class="col-6"><input type="text" name="code" /></div>        </div>
+				</div>
+				
+				</br>
+        <input type="submit" value="Envoyez les informations" name="submit_b34">';
 	}else{
       echo "Error in ".$query."<br>".$db->error;
     }
@@ -491,9 +645,18 @@ elseif (isset($_POST['code']) and ($_POST['code']=='B351'or $_POST['code']=='B35
 		 	echo '<table border="1"><tr><td>'.$row['code'].'</td><td>'.$row['point'].'</td><td>'.$row['plafond'].'</td></tr></table>';
 		 
 		 }
-		    echo '</br><table border="1"><tr><th>Nature</th><th>Les partenaires</th><th>Bénéficiaire(s)</th><th>date</th><th>Retombées socio-économiques</th><th>Code</th></tr>
-		                                 <tr><td><input type="text"/></td><td><input type="text"/></td><td><input type="text"/></td><td><input type="text"/></td><td><input type="text"/></td><td><input type="text"/></td></tr>
-		          </table>';
+		    echo '</br>
+				  <div class="container">
+				<div class="row"><div class="col-6">Nature</div><div class="col-6"><input type="text" name="Nature" required="required" /></div>   </div>
+				<div class="row"><div class="col-6">Les partenaires</div><div class="col-6"><input type="text" name="Partenaires" required="required" /></div>   </div>
+				<div class="row"><div class="col-6">Bénéficiaire(s)</div><div class="col-6"><input type="text" name="Beneficiaires" required="required" /></div>   </div>
+				<div class="row"><div class="col-6">Date</div><div class="col-6"><input type="text" name="Date" required="required" /></div>        </div>
+				<div class="row"><div class="col-6">Retombées socio-économiques</div><div class="col-6"><input type="text" name="Retombees_socio_economiques" required="required" /></div>        </div>
+				<div class="row"><div class="col-6">Code</div><div class="col-6"><input type="text" name="code" /></div>        </div>
+				</div>
+				
+				</br>
+        <input type="submit" value="Envoyez les informations" name="submit_b35">';
 	}else{
       echo "Error in ".$query."<br>".$db->error;
     }

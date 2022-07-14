@@ -100,10 +100,10 @@ if (isset($_POST['ajouter'])){
 </head>
 <body style="background-image: url('img/whiteBg.jpg');">
 <!-- Navbar -->
-<?php  include("navbar.php");?>	
+<?php  include("navbar_v2.php");?>	
 
 <!-- désposer votre dossier -->
-
+<h1 style="position:absolute;top: 15%;left:31% ;">BIENVENUE <?PHP echo " ".$_SESSION['firstname']." ".$_SESSION['lastname'] ;?> </h1>
 <button type="submit" class="btn_a" name="submit">D&eacutesposer votre dossier de candidature </button>
 
 

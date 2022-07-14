@@ -1,8 +1,6 @@
 <?php
 include('session.php');
 
-session_start();
-
 $email=$_SESSION['email'];
 
 $sql="SELECT * FROM dossier where email ='$email'";
@@ -55,7 +53,7 @@ $result2= $db-> query($sql2);
   }
 </style>
 </head>
-<body>
+<body style="background-image: url('img/whiteBg.jpg');">
 
 <?php  include("navbar.php");?>
 

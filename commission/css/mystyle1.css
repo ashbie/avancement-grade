@@ -1,0 +1,70 @@
+*{padding: 0;
+margin: 0;
+}
+/* Add a black background color to the top navigation */
+.topnav {
+    background-color: #333;
+    overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  font-family: arial black;
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.topnav a.logout {
+  background-color: #af4c4c;
+  color: white;
+}
+
+
+/* Right-aligned section inside the top navigation */
+.topnav-right {
+  float: right;
+}
+.t1{
+  border-left: 1px solid;
+  border-right: 1px solid; 
+  border-color: white;
+}
+.t2{
+  border-right: 2px solid; 
+  border-color: white;
+}
+/*paragraphe bienvenu ...*/
+.p-center{
+  color : black;
+   position: absolute;
+  left: 33%; 
+  top:40%;
+   
+}
+
+button{
+	color:white;
+	height: 35px;
+	width: 300px;
+	position: absolute;
+	top: 87%;
+	left: 30%;
+	background-color:#4CAF50;
+	border:none;
+}

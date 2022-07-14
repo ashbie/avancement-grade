@@ -20,7 +20,7 @@
 </head>
 <body style="background-image: url('img/whiteBg.jpg');">
 <!-- Navbar -->
-<?php  include("navbar.php");?>	
+<?php  include("navbar_v2.php");?>	
 <center><h1>Vos Informations</h1></center>
 <!-- Collecting the info using PHP -->
 <?php

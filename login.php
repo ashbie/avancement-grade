@@ -3,19 +3,19 @@
    include("config.php");
 
    $conn = $db;
-   $error = "";
+   $error = ""; 
    if(isset($_POST['login_button'])) {
       // username and password sent from form 
       
       $myemail = mysqli_real_escape_string($conn,$_POST['login_email']);
       $mypassword = mysqli_real_escape_string($conn,$_POST['login_password']); 
 
-      $mypassword = $mypassword;
+      $mypassword = $mypassword; // This is where MD5 comes in, if the password in the database in encrypted
       
-      $sql = "SELECT id FROM users WHERE email = '$myemail' and mot_de_passe = '$mypassword'";
+      $sql = "SELECT `id` FROM `users` WHERE `email` = '$myemail' and `mot_de_passe` = '$mypassword'";
       $result = mysqli_query($conn,$sql);
       $theArray = mysqli_fetch_array($result,MYSQLI_ASSOC);
-      #$active = $row['active'];
+      
       
       $count = mysqli_num_rows($result);
       
@@ -23,23 +23,78 @@
 		
       if($count == 1) {
          #session_register("myemail");
-         $_SESSION['email'] = $myemail;
+         
          // Storing username in session variable
-         $query="SELECT nom_utilisateur from users where email = '$myemail' and mot_de_passe = '$mypassword'";
+         $query="SELECT * from `users` WHERE `email` = '$myemail' and `mot_de_passe` = '$mypassword'";
          $username_result = mysqli_query($conn, $query);
-         $record = mysqli_fetch_array($username_result);
-         $_SESSION['username'] = $record['0'];
+         $record = mysqli_fetch_array($username_result,MYSQLI_ASSOC);
+         $_SESSION['username'] = $record['nom_utilisateur'];
+         $_SESSION['firstname'] = $record['prenom'];
+         $_SESSION['lastname'] = $record['nom'];
+         $_SESSION['email'] = $record['email'];
+         $is_it_yes = $record['completed_info'];
               
          // Welcome message
          $_SESSION['success'] = "Vous êtes connecté!";
            
          // Page on which the user is sent
-         // to after logging in         
-         header("location:completer_informations.php");
+         // to after logging in  
+         if($is_it_yes == 'yes')
+         {
+          header("location:page5index.php");
+         }else{
+          header("location:completer_informations.php");
+         }
       }else {
          $error = "Votre Email ou Mot de Passe est incorrecte";
       }
-   }
+   } // if(isset()) closing curly bracket
+
+if(isset($_POST['login_membre'])) {
+// username and password sent from form 
+
+$myemail = mysqli_real_escape_string($conn,$_POST['login_email']);
+$mypassword = mysqli_real_escape_string($conn,$_POST['login_password']); 
+
+$mypassword = $mypassword; // This is where MD5 comes in, if the password in the database in encrypted
+
+$sql = "SELECT `id` FROM `membres_commission` WHERE `email` = '$myemail' and `mot_de_passe` = '$mypassword'";
+$result = mysqli_query($conn,$sql);
+$theArray = mysqli_fetch_array($result,MYSQLI_ASSOC);
+
+
+$count = mysqli_num_rows($result);
+
+// If result matched $myemail and $mypassword, table row must be 1 row
+
+if($count == 1) {
+  #session_register("myemail");
+  
+  // Storing username in session variable
+  $query="SELECT * from `membres_commission` WHERE `email` = '$myemail' and `mot_de_passe` = '$mypassword'";
+  $username_result = mysqli_query($conn, $query);
+  $record = mysqli_fetch_array($username_result,MYSQLI_ASSOC);
+  $_SESSION['username'] = $record['nom_utilisateur'];
+  $_SESSION['firstname'] = $record['prenom'];
+  $_SESSION['lastname'] = $record['nom'];
+  $_SESSION['email'] = $record['email'];
+  $is_it_yes = $record['completed_info'];
+      
+  // Welcome message
+  $_SESSION['success'] = "Vous êtes connecté!";
+    
+  // Page on which the user is sent
+  // to after logging in  
+  if($is_it_yes == 'yes')
+  {
+  header("location:commission/evaluer_dossiers_v2.php");
+  }else{
+  header("location:commission/completer_informations_commission.php");
+  }
+}else {
+  $error = "Votre Email ou Mot de Passe est incorrecte";
+}
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -118,13 +173,15 @@
         <div class="container">
           <div class="row justify-content-center">
             <div class="col-xl-5 col-md-8">
-              <form class="bg-dark rounded shadow-5-strong p-5" method="post" action="#">
-                <h1 class="text-white bg-dark" >ACCÉDER À VOTRE COMPTE</h1> <br>
-                <span class="error"><?php echo $error; ?><br><br></span>
+              <form class="bg-dark rounded shadow-5-strong p-5 " method="post" action="#">
+                <h1 class="text-white bg-dark" ><center>ACCÉDER À VOTRE COMPTE<center></h1> <br>
+                <p class="">
+                      <center class="text-muted">Utilisez vos informations d'identification</center>
+                </p>
+                <span class="error"><?php echo $error; ?></span>
                 <!-- Email input -->
                 <div class="form-outline mb-4">
-                  <input type="email" id="elogin" name="login_email" class="form-control"/>
-                  <label class="form-label" for="elogin"><p class="text-white-50 bg-dark">Entrer votre mail</p></label>
+                  <input type="email" id="elogin" name="login_email" class="form-control" placeholder="Email" required="required"/>
                 </div>
 
                 <!-- Password input -->
@@ -145,7 +202,23 @@
                 </div>
 
                 <!-- Submit button -->
-                <button type="submit" class="btn btn-success btn-block" name="login_button">connexion</button>
+                <p class="">
+                      <center class="text-muted">SE CONNECTER COMME</center>
+                </p>
+                  <div class="row" id="signin-buttons">
+
+                <div class="col-6">
+                  <div class="form-group">
+                    <button type="submit" class="btn-lg btn-success btn-block" name="login_button">ENSEIGNANT <i class="fas fa-user"></i> </button>
+                  </div>
+                  </div>
+                  
+                    <div class="col-6">
+                      <div class="form-group">
+                    <button type="submit" class="btn btn-success btn-block" name="login_membre">MEMBRE COMMISSION <i class="fas fa-user-cog"></i> </button>
+                  </div>
+                    </div>
+                  </div>
               </form>
               <div style = "font-size:11px; color:#cc0000; margin-top:10px"></div>
             </div>

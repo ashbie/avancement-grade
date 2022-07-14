@@ -8,7 +8,6 @@
 
 <link rel="stylesheet" href="css/mystyle5.css"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!-- body style="background-image: url('picture/4TMokV.jpg');"-->
 <style >
 	h1,h2,h3,h4,h5,h6 {
 		font-family: "oswald"
@@ -47,22 +46,13 @@
 
 	<script src="js/jquery-3.6.0.min.js"></script>
 </head>
-<body>
+<body style="background-image: url('img/whiteBg.jpg');">
 
 	<!--NAV BAR -->
-
-<nav class="top-nav">
-  <a href="profile.php">MON Profile</a>
-  <a href="index.php">Accueil</a>
-  <a href="completer_informations.php">Completer Information</a>
-  <a href="document.php">D&eacuteposer Vos Documents</a>
-  <a href="voir_dossier.php">Voir dossier</a>
-  <a href="#Imprimer dossier">Imprimer dossier</a>
-  <a href="logout.php" style="border-right: 2px solid white">Se deconnecter</a>
-</nav> 
+<?php include("navbar_v2.php"); ?>
 
 <!--désposer votre dossier -->
-
+<h1 style="position:absolute;top: 15%;left:31% ;">BIENVENUE <?PHP echo " ".$_SESSION['firstname']." ".$_SESSION['lastname'] ;?> </h1>
 <button type="submit" class="btn_a" name="submit">D&eacutesposer votre dossier de candidature </button>
 
 <!--remplire le dossier -->
@@ -108,11 +98,12 @@
           </select>
         </div>
         <div id="table_element" class="table_element">
-            <table border='1'><tr><th>CODE</th><th>POINT</th><th>PLAFOND</th></th></table>
-        </div>
+            <table border='1'><tr><th>CODE</th><th>POINT</th><th>PLAFOND</th></tr></table>
+        
            </br>
         <input type="submit" value="Envoyez les informations" name="submit">
-        
+        </div>
+
       </form>
 
     

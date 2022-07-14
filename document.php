@@ -8,7 +8,7 @@
 
 <link rel="stylesheet" href="css/mystyle5.css"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!-- body style="background-image: url('picture/4TMokV.jpg');"-->
+<script src="js/jquery-3.6.0.min.js"></script>
 <style >
 	h1,h2,h3,h4,h5,h6 {
 		font-family: "oswald"
@@ -45,12 +45,10 @@
   }
 </style>
 </head>
-<body>
-	<script src="js/jquery-3.6.0.min.js"></script>
-
+<body style="background-image: url('img/whiteBg.jpg');">
 	<!--NAV BAR -->
 
-<?php  include("navbar.php");?>
+<?php  include("navbar_v2.php");?>
 
 <button type="submit" class="btn_a" name="submit">D&eacutesposer vos Documents </button>
 

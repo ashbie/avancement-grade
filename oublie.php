@@ -19,11 +19,9 @@
       // If result matched $myemail and $myusername, table row must be 1 row
 		
       if($count == 1) {
-         $forgottenPassword = $theArray['mot_de_passe'];
-    
-         echo '<script>alert("Votre mot de passe est : '.$forgottenPassword.' ");</script>';
-         // Page on which the user is sent
-         // to after logging in         
+         // Page on which the user is sent to after verifying username and email
+         $_SESSION['oublieEmail'] = $myemail; // This will be used in changePass.php
+         header("location: changepass.php");         
       }else {
          $error = "Votre Email ou Nom d'utilisateur est incorrecte";
       }
@@ -125,7 +123,7 @@
 
                         
                         <div class="form-group" id="create-account-button">
-                            <button type="submit" class="btn btn-success btn-block" name="sendPass">TERMINER </button>
+                            <button type="submit" class="btn btn-success btn-block" name="sendPass">VERIFIER </button>
                         </div>
 
                         <p class="text-center">Copyright @ <?php echo date("Y"); ?> &nbsp; | &nbsp;<a href="index.php" style="font-weight: 400; text-decoration:none; letter-spacing:1px; font-size:1.3em;">

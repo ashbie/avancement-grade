@@ -1,0 +1,18 @@
+1.1. How to use this:
+    error_reporting(E_ALL);
+    ini_set('display_errors', true);
+
+1.2. How to have exception and error handling in php ? ( especially when interacting with a DataBase
+     and a query returns NULL, or the DataBase generates an error message ).
+
+2. CSS = `completer_informations_commission` page
+
+$1 ~ 210.55 Naira
+
+JQUERY - AJAX
+* Select the container we want to `load()` the new data into;
+* The `load()` function can have three parametres:
+   # 1. Is the link to the file we want to load into the container.
+   # 2. Is some kind of data that we want to include( inside the file that we linked to) using the POST method.
+   # 3. Is a callback that we could use if we want to let ourselves know if the whole thing actually run inside our code
+

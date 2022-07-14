@@ -1,0 +1,106 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+.top-nav{
+
+	text-align: center;
+	font-family: arial black;
+	padding: 14px 16px;
+	background-color:#333;
+	font-size: 17px;
+
+}
+
+.top-nav a{
+
+	border-left: 2px solid white;
+	color: white;
+	text-decoration: none;
+	padding: 15px;
+}
+
+.top-nav a:hover {
+  background-color: #ddd;
+  color: #4CAF50;
+}
+button{
+	color:white;
+	height: 45px;
+	width: 700px;
+	position: absolute;
+	top: 40%;
+	left: 22.5%;
+	background-color:#4CAF50;
+	border:none;
+}
+select{
+	height: 30px;width: 300px;
+	border:none;
+	background-color: rgb(0,0,0,0);
+	border-bottom: 2px solid #4CAF50;
+
+}
+form{
+	
+	font-family: arial black;
+}
+.rubrique{
+	position: absolute;
+	left:3%;
+	top: 15%;
+}
+.sous_rubrique{
+	position: absolute;
+	left:3%;
+	top: 29%;
+}
+.catégorie{
+	position: absolute;
+	left:3%;
+	top: 40%;
+}
+.intitulé{
+	position: absolute;
+	left:3%;
+	top: 51%; 
+}
+.Type_de_la_Formation{
+	position: absolute;
+	left:3%;
+	top: 62%;
+}
+.bénéficiaires_de_la_formation{
+	position: absolute;
+	left:3%;
+	top: 73%;
+}
+.année{
+	position: absolute;
+	left:3%;
+	top: 84%;
+}
+input{
+	padding: 5px;
+	border: 2px solid #4CAF50;
+}
+.btn{
+	color:white;
+	height: 35px;
+	width: 100px;
+	position: absolute;
+	top: 97%;
+	left: 3%;
+	background-color:#4CAF50;
+	border:none;
+}
+.btn_b{
+	color:white;
+	height: 35px;
+	width: 100px;
+	position: absolute;
+	top: 97%;
+	left: 18.5%;
+	background-color:#4CAF50;
+	border:none;
+}

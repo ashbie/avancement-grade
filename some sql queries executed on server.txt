@@ -1,0 +1,125 @@
+UPDATE `users` SET `completed_info` = 'yes' WHERE `email` = 'beans@yahoo.com';
+UPDATE `users` SET `completed_info` = 'yes' WHERE `email` = 'jim@yahoo.com';
+UPDATE `users` SET `completed_info` = 'yes' WHERE `email` = 'cheese@yahoo.com';
+UPDATE `users` SET `completed_info` = 'yes' WHERE `email` = 'dwight@yahoo.com';
+
+ALTER TABLE `users` ADD `membre_de_commission` VARCHAR(3) NOT NULL DEFAULT 'no' AFTER `completed_info`;
+
+INSERT INTO `membres_commission`(`id`, `nom`, `prenom`, `nom_utilisateur`, `email`, `mot_de_passe`, `completed_info`,`permission_to_evaluate`) 
+VALUES (2,'MWEEMBA', 'Ashbie', 'beezho','ashbie.b.mweemba@gmail.com','lljs','no','no');
+
+ INSERT INTO `membres_commission`(`id`, `nom`, `prenom`, `nom_utilisateur`, `email`, `mot_de_passe`, `completed_info`, `permission_to_evaluate`) 
+ VALUES (2,'ded','ooo','breezy','clide@yahoo.com','lljs','no','no');
+
+ ALTER TABLE `membres_commission` ADD PRIMARY KEY(`email`);
+
+ ALTER TABLE `membres_commission` ADD UNIQUE(`nom_utilisateur`);
+
+
+
+ SELECT 
+	* 
+FROM 
+	`users` CROSS 
+	JOIN `completer_informations` 
+WHERE 
+	`users`.`email` = `completer_informations`.`email`
+	AND `completer_informations`.`grade` = 'b' 
+	AND `completer_informations`.`titre` = 'ph';
+
+
+
+SELECT * FROM `users` 
+	INNER JOIN `completer_informations` 
+	ON users.email = completer_informations.email
+	WHERE `grade` = 'b' 
+	AND `titre` = 'ph';
+
+
+ALTER TABLE `dossier` ADD `titre` TEXT NULL DEFAULT NULL AFTER `element`, ADD `editeur` TEXT NULL DEFAULT NULL AFTER `titre`, ADD `annee_de_production` TEXT NULL DEFAULT NULL AFTER `editeur`, ADD `intitule` TEXT NULL DEFAULT NULL AFTER `annee_de_production`, ADD `niveau` TEXT NULL DEFAULT NULL AFTER `intitule`, ADD `departement` TEXT NULL DEFAULT NULL AFTER `niveau`, ADD `annee` TEXT NULL DEFAULT NULL AFTER `departement`, ADD `code` TEXT NULL DEFAULT NULL AFTER `annee`;
+
+ALTER TABLE `dossier` 
+ADD `titre`                TEXT NULL DEFAULT NULL AFTER   `element`, 
+ADD `editeur`			   TEXT NULL DEFAULT NULL AFTER   `titre`,
+ADD `annee_de_production`  TEXT NULL DEFAULT NULL AFTER   `editeur`,
+ADD `intitule`             TEXT NULL DEFAULT NULL AFTER   `annee_de_production`,
+ADD `niveau`               TEXT NULL DEFAULT NULL AFTER   `intitule`, 
+ADD `departement`          TEXT NULL DEFAULT NULL AFTER   `niveau`,
+ADD `annee`                TEXT NULL DEFAULT NULL AFTER   `departement`,
+ADD `code`                 TEXT NULL DEFAULT NULL AFTER   `annee`;
+
+***********************************************************************************************
+
+ALTER TABLE `dossier` 
+ADD `niveau_1_ou_2`                  TEXT NULL DEFAULT NULL AFTER   `code`, 
+ADD `matiere`			             TEXT NULL DEFAULT NULL AFTER   `niveau_1_ou_2`,
+ADD `Volume_annuel_equivalent_TP`    TEXT NULL DEFAULT NULL AFTER   `matiere`,
+ADD `cour`                           TEXT NULL DEFAULT NULL AFTER   `Volume_annuel_equivalent_TP`,
+ADD `TD`                             TEXT NULL DEFAULT NULL AFTER   `cour`, 
+ADD `TP`                             TEXT NULL DEFAULT NULL AFTER   `TD`,
+ADD `Total_equivalent_TP`            TEXT NULL DEFAULT NULL AFTER   `TP`,
+ADD `Type_de_la_formation`           TEXT NULL DEFAULT NULL AFTER   `Total_equivalent_TP`,
+
+ADD `Beneficiaires_de_la_formation`           TEXT NULL DEFAULT NULL AFTER   `Type_de_la_formation`,
+ADD `FORMATION`                  TEXT NULL DEFAULT NULL AFTER   `Beneficiaires_de_la_formation`, 
+ADD `Etablissement`			             TEXT NULL DEFAULT NULL AFTER   `FORMATION`,
+ADD `Volume_horaire`    TEXT NULL DEFAULT NULL AFTER   `Etablissement`,
+ADD `Nature`                           TEXT NULL DEFAULT NULL AFTER   `Volume_horaire`,
+ADD `Periode`                             TEXT NULL DEFAULT NULL AFTER   `Nature`, 
+ADD `Lieu`                             TEXT NULL DEFAULT NULL AFTER   `Periode`,
+ADD `Departement_et_etablissement`            TEXT NULL DEFAULT NULL AFTER   `Lieu`,
+
+ADD `Structure_universitaire`                  TEXT NULL DEFAULT NULL AFTER   `Departement_et_etablissement`, 
+ADD `Reference`			             TEXT NULL DEFAULT NULL AFTER   `Structure_universitaire`,
+ADD `Intitule_de_la_manifestation`    TEXT NULL DEFAULT NULL AFTER   `Reference`,
+ADD `Lieu_de_la_manifestation`                           TEXT NULL DEFAULT NULL AFTER   `Intitule_de_la_manifestation`,
+ADD `Nature_de_encadrement`                             TEXT NULL DEFAULT NULL AFTER   `Lieu_de_la_manifestation`, 
+ADD `Nom_du_candidat`                             TEXT NULL DEFAULT NULL AFTER   `Nature_de_encadrement`,
+ADD `Theme`            TEXT NULL DEFAULT NULL AFTER   `Nom_du_candidat`,
+ADD `Annee_et_lieu_de_soutenance`           TEXT NULL DEFAULT NULL AFTER   `Theme`,
+
+ADD `Diplome`                  TEXT NULL DEFAULT NULL AFTER   `Annee_et_lieu_de_soutenance`, 
+ADD `lieu_de_soutenance`			             TEXT NULL DEFAULT NULL AFTER   `Diplome`,
+ADD `Date_de_soutenance`    TEXT NULL DEFAULT NULL AFTER   `lieu_de_soutenance`,
+ADD `Date`                           TEXT NULL DEFAULT NULL AFTER   `Date_de_soutenance`,
+ADD `intitule_Laboratoire_ou_unite_de_recherche`                             TEXT NULL DEFAULT NULL AFTER   `Date`, 
+ADD `intitule_Reseau`                             TEXT NULL DEFAULT NULL AFTER   `intitule_Laboratoire_ou_unite_de_recherche`,
+ADD `intitule_pole_de_competences`                             TEXT NULL DEFAULT NULL AFTER   `intitule_Reseau`,
+ADD `intitule_UFR_Doctorat_DESA_DESS`                             TEXT NULL DEFAULT NULL AFTER   `intitule_pole_de_competences`,
+ADD `Membre_ou_responsable_Laboratoire_ou_unite_de_recherche`                             TEXT NULL DEFAULT NULL AFTER   `intitule_UFR_Doctorat_DESA_DESS`,
+ADD `Membre_ou_responsable_Reseau`                             TEXT NULL DEFAULT NULL AFTER   `Membre_ou_responsable_Laboratoire_ou_unite_de_recherche`,
+ADD `Membre_ou_responsable_pole_de_competences`                             TEXT NULL DEFAULT NULL AFTER   `Membre_ou_responsable_Reseau`,
+ADD `Membre_ou_responsable_UFR_Doctorat_DESA_DESS`                             TEXT NULL DEFAULT NULL AFTER   `Membre_ou_responsable_pole_de_competences`,
+ADD `Etablissement_Laboratoire_ou_unite_de_recherche`                             TEXT NULL DEFAULT NULL AFTER   `Membre_ou_responsable_UFR_Doctorat_DESA_DESS`, 
+ADD `Etablissement_Reseau`                             TEXT NULL DEFAULT NULL AFTER   `Etablissement_Laboratoire_ou_unite_de_recherche`,
+ADD `Etablissement_pole_de_competences`                             TEXT NULL DEFAULT NULL AFTER   `Etablissement_Reseau`,
+ADD `Etablissement_UFR_Doctorat_DESA_DESS`                             TEXT NULL DEFAULT NULL AFTER   `Etablissement_pole_de_competences`,
+ADD `Periode_Laboratoire_ou_unite_de_recherche`                             TEXT NULL DEFAULT NULL AFTER   `Etablissement_UFR_Doctorat_DESA_DESS`, 
+ADD `Periode_Reseau`                             TEXT NULL DEFAULT NULL AFTER   `Periode_Laboratoire_ou_unite_de_recherche`,
+ADD `Periode_pole_de_competences`                             TEXT NULL DEFAULT NULL AFTER   `Periode_Reseau`,
+ADD `Periode_UFR_Doctorat_DESA_DESS`                             TEXT NULL DEFAULT NULL AFTER   `Periode_pole_de_competences`,
+
+ADD `code_Laboratoire_ou_unite_de_recherche`                             TEXT NULL DEFAULT NULL AFTER   `Periode_UFR_Doctorat_DESA_DESS`, 
+ADD `code_Reseau`                             TEXT NULL DEFAULT NULL AFTER   `code_Laboratoire_ou_unite_de_recherche`,
+ADD `code_pole_de_competences`                             TEXT NULL DEFAULT NULL AFTER   `code_Reseau`,
+ADD `code_UFR_Doctorat_DESA_DESS`                             TEXT NULL DEFAULT NULL AFTER   `code_pole_de_competences`,
+
+ADD `Intitule_et_cadre`                             TEXT NULL DEFAULT NULL AFTER   `code_UFR_Doctorat_DESA_DESS`,
+ADD `Responsable_ou_participant`            TEXT NULL DEFAULT NULL AFTER   `Intitule_et_cadre`,
+ADD `Partenaires`           TEXT NULL DEFAULT NULL AFTER   `Responsable_ou_participant`,
+ADD `Type_de_financement`                TEXT NULL DEFAULT NULL AFTER   `Partenaires`, 
+ADD `Etablissement_ou_Organisme`			   TEXT NULL DEFAULT NULL AFTER   `Type_de_financement`,
+ADD `Beneficiaires`  TEXT NULL DEFAULT NULL AFTER   `Etablissement_ou_Organisme`,
+ADD `Retombees_socio_economiques`             TEXT NULL DEFAULT NULL AFTER   `Beneficiaires`;
+
+ALTER TABLE `dossier` 
+ADD `Intitule_ou_precisions`                  TEXT NULL DEFAULT NULL AFTER   `Retombees_socio_economiques`;
+
+ALTER TABLE `dossier` 
+ADD `submit` TEXT NULL DEFAULT NULL AFTER `Intitule_ou_precisions`;
+
+SELECT * 
+FROM `dossier` 
+WHERE `email` = 'ashbie.b.mweemba@gmail.com' 
+AND `element` =Membre de comité d’organisation d’une structure officiellement reconnue 
+/* Need to put the Membre part in single inverted commas! */

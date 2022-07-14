@@ -1,0 +1,22 @@
+Monday 24th May, 2020 (? - 22 or 23)
+- Membre de commission logging in
+- (Haven't yet added the deposer_dossier and completer_informations for the membre de commission)
+
+Tuesday 25th May, 2020 (14:16 - 16:16)
+- `completer_informations_commission` is not displaying anything when I log in as a membre de commission
+
+Wednesday 26th May, 2020 (23:30 - 01:30)
+
+Thursday 27th May, 2020 (17:00 - 19:00)
+Gestion des Projets - diagramme de Pert
+                    - diagramme de Gnatt
+                    - PPS, RPS, ~doule vps
+
+Thursday 27th May, 2020 (19:30 - 21:30)
+Codage
+-Need to modify the navbars on the other pages to match that in `commission/navbar.php`
+-Need to link `completer_informations_commission.php` to `evaluer_dossiers_v2.php`
+-Need to make the CSS in `evaluer_dossiers_v2.php` work 100%
+-Need to finish the `evaluer_dossiers_v2.php` page
+
+!! Do the `Autres` elements as well !
